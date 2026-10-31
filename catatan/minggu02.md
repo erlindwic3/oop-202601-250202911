@@ -3,7 +3,7 @@
 ## Yang saya kerjakan
 
 Di minggu 2 saya mengerjakan dan melengkapi file 'Aset.java', yaitu class yang mewakili aset yang bisa dipinjam (ruang, laptop, alat lab) yang mencangkyp 4 filed private yaitu kode, status, dan kondisi. konstruktor dengan validasi, getter, dan setter untuk nama, status, dan kondisi.
-Tes: 'Minggu02AsetTest' , hasil [LOLOS / ada yang gagal]
+Tes: 'Minggu02AsetTest' , hasil LOLOS
 
 ## Keputusan dan asumsi
 
@@ -36,7 +36,7 @@ Kendala yang saya alami saat mengerjakan tugas minggu 2 adalah tadi sempat muncu
 4. Saya menempelkan error WSL dan hasil `uji.ps1`, lalu bertanya penyebabnya.
 5. Saya meminta bantuan mengisi bagian laporan: keputusan, kendala, dan
    penggunaan AI.
-[Tambahkan prompt lain yang Anda ketik di luar percakapan ini.]
+
 
 ## Yang saya ubah atau tolak, dan alasannya
 - AI awalnya menebak nama enum `KondisiAset`. Setelah saya tempelkan
@@ -47,9 +47,9 @@ Kendala yang saya alami saat mengerjakan tugas minggu 2 adalah tadi sempat muncu
   bagian Keputusan dan asumsi.
 - Method untuk minggu 3, 4, dan 5 (`getJenis`, `hitungDenda`,
   `bisaDipinjam`) saya biarkan karena belum waktunya.
-- [Tulis bagian lain yang Anda ubah sendiri dari saran AI, kalau ada.]
+
 
 ## Yang sudah saya pahami
 Saya bisa menjelaskan tanpa melihat AI: alur konstruktor dan validasinya,
 kenapa `kode` dibuat `final` tanpa setter, dan kenapa validasi dipusatkan di
-satu method. [Kalau ada bagian yang belum jelas, tulis jujur di sini.]
+satu method. 
