@@ -11,8 +11,7 @@ di konstruktor, punya field dan getter sendiri, dan meng-override `getJenis()`.
 - `AlatLab`: field `laboratorium` (tidak boleh kosong) dan `tingkatRisiko`
   (tidak boleh null), `getJenis()` mengembalikan `ALAT_LAB`.
 
-Tes: `Minggu03HierarkiTest`, hasil [ISI: LOLOS / ada yang gagal, sebutkan yang gagal].
-CI di GitHub: [ISI: hijau / merah].
+Tes: `Minggu03HierarkiTest`, hasil
 
 ## Keputusan dan asumsi
 
@@ -62,7 +61,7 @@ Kalau tidak ada kendala, tulis "Tidak ada kendala berarti".]
 3. Saya menempelkan isi `Aset.java`.
 4. Saya menempelkan isi `Minggu03HierarkiTest.java`.
 5. Saya meminta bantuan mengisi catatan ini.
-[ISI: tambahkan prompt lain yang Anda ketik di luar percakapan ini, kalau ada.]
+
 
 ## Yang saya ubah atau tolak, dan alasannya
 - Urutan parameter konstruktor awalnya hanya tebakan AI. Saya cocokkan dengan
@@ -78,4 +77,3 @@ Saya bisa menjelaskan tanpa melihat AI: [ISI: hanya centang yang benar-benar
 Anda pahami, misalnya alasan `super(...)` harus baris pertama, apa yang terjadi
 kalau lupa memanggilnya, kenapa validasi `Aset` ikut berlaku di subclass,
 dan bagaimana `getJenis()` bekerja pada `List<Aset>`.]
-[Kalau ada bagian yang belum jelas, tulis jujur di sini.]

@@ -1,35 +1,34 @@
 package id.ac.upb.asetpinjam.model;
 
-/** Minggu 3: aset berupa laptop. Spesifikasi dan nomor inventaris tidak boleh kosong. */
+import id.ac.upb.asetpinjam.config.Varian;
+
 public class Laptop extends Aset {
 
-    private final String spesifikasi;
-    private final String nomorInventaris;
+    private String spesifikasi;
+    private String nomorInventaris;
 
     public Laptop(String kode, String nama, String spesifikasi, String nomorInventaris) {
         super(kode, nama);
-        if (spesifikasi == null || spesifikasi.isBlank()) {
-            throw new IllegalArgumentException("spesifikasi tidak boleh null atau kosong");
-        }
-        if (nomorInventaris == null || nomorInventaris.isBlank()) {
-            throw new IllegalArgumentException("nomor inventaris tidak boleh null atau kosong");
-        }
-        this.spesifikasi = spesifikasi.trim();
-        this.nomorInventaris = nomorInventaris.trim();
+        if (spesifikasi == null || spesifikasi.isBlank())
+            throw new IllegalArgumentException("spesifikasi tidak boleh kosong");
+        if (nomorInventaris == null || nomorInventaris.isBlank())
+            throw new IllegalArgumentException("nomorInventaris tidak boleh kosong");
+        this.spesifikasi = spesifikasi;
+        this.nomorInventaris = nomorInventaris;
     }
 
-    public String getSpesifikasi() {
-        return spesifikasi;
-    }
-
-    public String getNomorInventaris() {
-        return nomorInventaris;
-    }
+    public String getSpesifikasi() { return spesifikasi; }
+    public String getNomorInventaris() { return nomorInventaris; }
 
     @Override
     public JenisAset getJenis() {
         return JenisAset.LAPTOP;
     }
 
-    // TODO minggu 4: override hitungDenda(int).
+    @Override
+    public long hitungDenda(int hariTerlambat) {
+        if (hariTerlambat < 0)
+            throw new IllegalArgumentException("hariTerlambat tidak boleh negatif");
+        return (long) hariTerlambat * 2 * Varian.aktif().dendaPerHari;
+    }
 }
