@@ -1,9 +1,6 @@
 package id.ac.upb.asetpinjam.model;
-
-import id.ac.upb.asetpinjam.config.Varian;
 import id.ac.upb.asetpinjam.kontrak.DapatDipinjam;
-
-public class Aset implements DapatDipinjam {
+public abstract class Aset implements DapatDipinjam {
 
     private final String kode;
     private String nama;
@@ -44,16 +41,10 @@ public class Aset implements DapatDipinjam {
 
     @Override
     public boolean bisaDipinjam() {
-        throw new UnsupportedOperationException("TODO minggu 5");
+        return status == StatusAset.TERSEDIA && kondisi != Kondisi.RUSAK_BERAT;
     }
 
-    public JenisAset getJenis() {
-        throw new UnsupportedOperationException("TODO minggu 3");
-    }
+    public abstract JenisAset getJenis();
 
-    public long hitungDenda(int hariTerlambat) {
-        if (hariTerlambat < 0)
-            throw new IllegalArgumentException("hariTerlambat tidak boleh negatif");
-        return (long) hariTerlambat * Varian.aktif().dendaPerHari;
-    }
+    public abstract long hitungDenda(int hariTerlambat);
 }
