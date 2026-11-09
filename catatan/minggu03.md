@@ -11,7 +11,7 @@ di konstruktor, punya field dan getter sendiri, dan meng-override `getJenis()`.
 - `AlatLab`: field `laboratorium` (tidak boleh kosong) dan `tingkatRisiko`
   (tidak boleh null), `getJenis()` mengembalikan `ALAT_LAB`.
 
-Tes: `Minggu03HierarkiTest`, hasil
+Tes: `Minggu03HierarkiTest`,hasil
 
 ## Keputusan dan asumsi
 
