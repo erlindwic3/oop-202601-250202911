@@ -1,0 +1,105 @@
+classDiagram
+    namespace model {
+        class Aset {
+            <<abstract>>
+            -String kode
+            -String nama
+            -StatusAset status
+            -Kondisi kondisi
+            +getKode() String
+            +getNama() String
+            +getStatus() StatusAset
+            +getKondisi() Kondisi
+            +setNama(String)
+            +setStatus(StatusAset)
+            +setKondisi(Kondisi)
+            +bisaDipinjam() boolean
+            +getJenis()* JenisAset
+            +hitungDenda(int)* long
+        }
+        class Ruang {
+            -int kapasitas
+            +getKapasitas() int
+            +getJenis() JenisAset
+            +hitungDenda(int) long
+        }
+        class Laptop {
+            -String spesifikasi
+            -String nomorInventaris
+            +getSpesifikasi() String
+            +getNomorInventaris() String
+            +getJenis() JenisAset
+            +hitungDenda(int) long
+        }
+        class AlatLab {
+            -String laboratorium
+            -TingkatRisiko tingkatRisiko
+            +getLaboratorium() String
+            +getTingkatRisiko() TingkatRisiko
+            +getJenis() JenisAset
+            +hitungDenda(int) long
+        }
+        class JenisAset {
+            <<enumeration>>
+            RUANG
+            LAPTOP
+            ALAT_LAB
+        }
+        class StatusAset {
+            <<enumeration>>
+            TERSEDIA
+            DIPINJAM
+        }
+        class Kondisi {
+            <<enumeration>>
+            BAIK
+            RUSAK_RINGAN
+            RUSAK_BERAT
+        }
+        class TingkatRisiko {
+            <<enumeration>>
+            RENDAH
+            SEDANG
+            TINGGI
+        }
+    }
+    namespace katalog {
+        class KatalogAset {
+            -List~Aset~ daftar
+            +tambah(Aset)
+            +semua() List~Aset~
+            +cari(String) List~Aset~
+            +cari(String, JenisAset) List~Aset~
+        }
+    }
+    namespace denda {
+        class DendaFlat {
+            +hitung(Aset, int) long
+        }
+        class DendaProgresif {
+            +hitung(Aset, int) long
+        }
+        class LayananDenda {
+            -AturanDenda aturan
+            +hitung(Aset, int) long
+        }
+    }
+    namespace kontrak {
+        class DapatDipinjam {
+            <<interface>>
+            +bisaDipinjam() boolean
+        }
+        class AturanDenda {
+            <<interface>>
+            +hitung(Aset, int) long
+        }
+    }
+
+    Aset ..|> DapatDipinjam
+    Ruang --|> Aset
+    Laptop --|> Aset
+    AlatLab --|> Aset
+    DendaFlat ..|> AturanDenda
+    DendaProgresif ..|> AturanDenda
+    LayananDenda o-- AturanDenda
+    KatalogAset o-- Aset

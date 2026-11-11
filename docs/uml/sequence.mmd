@@ -1,0 +1,20 @@
+sequenceDiagram
+    actor Peminjam
+    participant Sistem
+    participant KatalogAset
+    participant Aset
+
+    Peminjam->>Sistem: ajukanPeminjaman(kodeAset)
+    Sistem->>KatalogAset: cari(kodeAset)
+    KatalogAset-->>Sistem: aset
+
+    alt Aset tersedia dan kondisi bukan RUSAK_BERAT
+        Sistem->>Aset: bisaDipinjam()
+        Aset-->>Sistem: true
+        Sistem->>Aset: setStatus(DIPINJAM)
+        Sistem-->>Peminjam: peminjaman berhasil
+    else Aset tidak tersedia atau rusak berat
+        Sistem->>Aset: bisaDipinjam()
+        Aset-->>Sistem: false
+        Sistem-->>Peminjam: peminjaman ditolak (bentrok atau rusak)
+    end
