@@ -10,10 +10,10 @@ Saya memilih menunjukkan SRP pada KatalogAset, OCP pada hierarki Aset, dan DIP p
 Tidak ada kendala berarti. File solid.md sempat belum dibuat sehingga satu tes gagal, setelah file dibuat semua tes lulus.
 
 ## Penggunaan AI
-- Alat yang dipakai: Claude (Anthropic)
-- Bagian yang dibantu AI: seluruh isi class.mmd, sequence.mmd, dan solid.md
-- Prompt utama:
-  1. "mulai minggu 6 dari awal saya belum"
-  2. AI langsung menghasilkan ketiga file sekaligus dalam format Mermaid
-- Yang saya ubah atau tolak dari saran AI, dan alasannya: tidak ada penolakan, semua tes langsung lulus setelah file dibuat.
-- Satu hal yang saya pahami lebih baik sekarang: Aggregation (o--) berarti objek bisa hidup tanpa pemiliknya, sedangkan composition (*--) berarti objek tidak bisa hidup tanpa pemiliknya. DIP meningkatkan testability karena dependensi bisa diganti dengan mock saat pengujian.
+- **Alat yang digunakan:** Claude (Anthropic).
+- **Bagian yang dibantu AI:** Membantu memberikan gambaran alur sistem peminjaman aset, menyusun Class Diagram, Sequence Diagram, dan penjelasan prinsip SOLID.
+- **Prompt utama:**
+  1. Menjelaskan bagaimana alur proses peminjaman aset dalam sistem.
+  2. Meminta bantuan membuat diagram UML dan penjelasan SOLID berdasarkan struktur kode program.
+- **Hal yang saya ubah atau periksa dari hasil AI:** Saya memeriksa kembali hasil diagram dan penjelasan yang diberikan AI agar sesuai dengan struktur kelas, atribut, method, serta hubungan antar kelas dalam program. Saya juga memastikan penggunaan fragmen `alt` pada Sequence Diagram untuk menggambarkan kondisi peminjaman berhasil dan peminjaman bentrok.
+- **Satu hal yang saya pahami lebih baik sekarang:** Saya lebih memahami cara menggambarkan hubungan antar kelas menggunakan UML, terutama perbedaan aggregation dan composition. Saya juga memahami bahwa penerapan DIP membuat program lebih mudah diuji karena dependensi dapat diganti dengan mock saat pengujian.
